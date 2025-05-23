@@ -22,13 +22,13 @@
 <?php
    if(isset($_POST["login"])){
 
-    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
 
-    $age = filter_input(INPUT_POST, "age", FILTER_SANITIZE_NUMBER_INT);
 
-    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-
-    echo "You are {$age} years old.<br>";
-
+    if(empty($age)){
+        echo "Please enter a valid age";}
+        else{
+            echo "Your age is {$age}<br>";
+        }
    }
 ?>

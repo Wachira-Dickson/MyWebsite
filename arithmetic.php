@@ -1,26 +1,14 @@
 <?php
-    //Arithmetic Operators
-    // - / * % ** +
-
-    $x = 10;
-    $y = 2;
-    $z = null;
-
-    //$z = $x + $y;
-    //$z = $x / $y;
-    //$z = $x * $y;
-    //$z = $x - $y;
-    //$z = $x ** $y;
-    $z = $x % $y;
-    echo $z;
+    include 'database.php';
 ?>
-
-<?php
-    //Increment/Decrement Operators
-
-    $counter = 0;
-
-    $counter--;
-    echo $counter;
-
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hello<br>
+</body>
+</html>

@@ -1,20 +1,18 @@
 <?php
-    include ("database.php");
+    include("database.php");
 
-    $db_username = "Patrick";
-    $db_password = "rocky123";
-    $hash = password_hash($db_password, PASSWORD_DEFAULT);
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conn, $sql);
 
-    $sql = "INSERT INTO users (db_username, db_password) VALUES ('$db_username', '$hash')";
-
-    try{
-        mysqli_query($conn, $sql);
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "Username: " . $row['username'] . "<br>";
+            echo "Password: " . $row['password'] . "<br>";
+        }
+    } else {
+        echo "No user found with that username.<br>";
     }
-    catch(mysqli_sql_exception ){
-        echo "Could not register user: <br>" ;
-    }
-    
 
     mysqli_close($conn);
-
 ?>
+>
